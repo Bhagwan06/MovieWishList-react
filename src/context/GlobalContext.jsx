@@ -20,15 +20,11 @@ export const MovieProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("watch-list", JSON.stringify(state.watchList));
-  }, [state]);
-
-  useEffect(() => {
     localStorage.setItem("watched", JSON.stringify(state.watched));
-  }, [state]);
-
-  useEffect(() => {
     localStorage.setItem("wish-list", JSON.stringify(state.wishList));
   }, [state]);
+  
+  
 
   // Actions 
   const addMovie = (movie) => {

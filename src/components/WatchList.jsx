@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import { MoviesContext } from '../context/GlobalContext'
 import { MoviesCard } from './MoviesCard'
-import { MovieCard } from './MovieCard'
 
-export default function Watchlist() {
+const WatchList = ()=> {
   const {watchList}=useContext(MoviesContext)
   return (
    <div className="movie-page">
@@ -11,7 +10,7 @@ export default function Watchlist() {
       <div className="header">
         <h2 className='heading'>MY WATCH LIST MOVIES</h2>
         <span className='count-pill'>
-          {watchList.length === 1 ? watchList.length +" movie":watchList.length +" movies"}
+          {watchList.length === 1 ?`${ watchList.length} movie` : `${ watchList.length} movies`}
         </span>
       </div>
 
@@ -34,3 +33,5 @@ export default function Watchlist() {
    </div>
   )
 };
+
+export default WatchList;

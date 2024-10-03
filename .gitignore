@@ -25,3 +25,10 @@ dist-ssr
 
 ###
 .env
+.enc.local
+.env.development
+.ene.production
+
+eslint.config.js
+vite.config.js
+
