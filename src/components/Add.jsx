@@ -27,7 +27,7 @@ export default function Add() {
     };
 
     const fetchMovies = (searchQuery) => {
-      const apiKey = import.meta.env.VITE_TMDB_KEY;  // VITE api
+      const apiKey = import.meta.env.VITE_TMDB_API_KEY;  // VITE api
 
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchQuery}&page=1&include_adult=false`, { mode: 'cors' })
             .then((res) => res.json())
