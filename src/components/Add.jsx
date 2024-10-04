@@ -31,7 +31,7 @@ export default function Add() {
 
           // Debugging API Key
 
-      console.log("API Key: ", apiKey);
+    //   console.log("API Key: ", apiKey);
 
 
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchQuery}&page=1&include_adult=false`)
