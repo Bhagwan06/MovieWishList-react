@@ -29,7 +29,12 @@ export default function Add() {
     const fetchMovies = (searchQuery) => {
       const apiKey = import.meta.env.VITE_TMDB_API_KEY;  // VITE api
 
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchQuery}&page=1&include_adult=false`, { mode: 'cors' })
+          // Debugging API Key
+
+      console.log("API Key: ", apiKey);
+
+
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchQuery}&page=1&include_adult=false`)
             .then((res) => res.json())
             .then((data) => {
                 if (!data.errors) {
@@ -38,7 +43,10 @@ export default function Add() {
                     setMovies([]);
                 }
             })
-            .catch(() => setMovies([]));
+            .catch((error) =>{
+                console.error('Failed to fetch movies:', error);
+                   setMovies([]);
+            });
     };
 
     return (
