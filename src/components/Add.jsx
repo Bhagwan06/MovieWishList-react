@@ -29,9 +29,11 @@ export default function Add() {
     const fetchMovies = (searchQuery) => {
       const apiKey = import.meta.env.VITE_TMDB_API_KEY;  // VITE api
 
-          // Debugging API Key
-
-    //   console.log("API Key: ", apiKey);
+   // Check if the API key is defined
+   if (!apiKey) {
+    console.error("API Key is undefined");
+    return; // Exit if the API key is not defined
+}
 
 
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchQuery}&page=1&include_adult=false`)
